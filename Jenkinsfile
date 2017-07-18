@@ -5,7 +5,7 @@ node {
 	}
 
 	stage('build image'){
-		app = docker.build("cderya/chandrew")
+		app = docker.build("getintodevops/chandrew")
 	}
 
 	stage('Test') {
