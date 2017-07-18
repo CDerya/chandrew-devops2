@@ -5,7 +5,7 @@ node {
 	}
 
 	stage('build image'){
-		app = docker.build("christhewintle/chandrew")
+		app = docker.build("andydavison/chandrew")
 	}
 
 	stage('Test') {
@@ -15,7 +15,7 @@ node {
 	}
 
 	stage('Push image') {
-		docker.withRegistry('https://registry.hubdocker.com', 'docker-hub-credentials') {
+		docker.withRegistry('https://registry.hubdocker.com', 'docker-hub-credentials-andy') {
 			app.push("${env.BUILD_NUMBER}")
 			app.push("latest")
 		}
