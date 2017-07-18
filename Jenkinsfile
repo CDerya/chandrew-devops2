@@ -1,7 +1,7 @@
 node {
 	def app
 	stage('Clone repository'){
-		checkout master
+		checkout scm
 	}
 
 	stage('build image'){
