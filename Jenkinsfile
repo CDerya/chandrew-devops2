@@ -15,7 +15,7 @@ node {
 	}
 
 	stage('Push image') {
-		docker.withRegistry('https://registry.hubdocker.com', 'cderya') {
+		docker.withRegistry('https://registry.hubdocker.com', 'docker-hub-credidentials') {
 			app.push("${env.BUILD_NUMBER}")
 			app.push("latest")
 		}
